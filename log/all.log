@@ -1,0 +1,55 @@
+2017-11-06 09:44:48,232 [Dummy-1:140378365171456] [django.db.backends:91] [utils:execute] [DEBUG]- (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+2017-11-06 09:44:48,234 [Dummy-1:140378365171456] [django.db.backends:91] [utils:execute] [DEBUG]- (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+2017-11-06 09:44:54,053 [Thread-2:140378347149056] [django.template:925] [base:_resolve_lookup] [DEBUG]- Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/xiongzhibiao/.pyenv/versions/3.5.0/envs/blog/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/xiongzhibiao/.pyenv/versions/3.5.0/envs/blog/lib/python3.5/site-packages/django/core/handlers/base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/xiongzhibiao/.pyenv/versions/3.5.0/envs/blog/lib/python3.5/site-packages/django/urls/resolvers.py", line 392, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLPattern None ^index/>]], 'path': ''}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/xiongzhibiao/.pyenv/versions/3.5.0/envs/blog/lib/python3.5/site-packages/django/template/base.py", line 882, in _resolve_lookup
+    current = current[bit]
+TypeError: 'RegexURLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/xiongzhibiao/.pyenv/versions/3.5.0/envs/blog/lib/python3.5/site-packages/django/template/base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegexURLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/xiongzhibiao/.pyenv/versions/3.5.0/envs/blog/lib/python3.5/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/xiongzhibiao/.pyenv/versions/3.5.0/envs/blog/lib/python3.5/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in '<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>'
+2017-11-06 09:44:54,055 [Thread-2:140378347149056] [django.server:124] [basehttp:log_message] [WARNING]- "GET / HTTP/1.1" 404 2022
+2017-11-06 09:51:59,286 [Dummy-1:139668595439360] [django.db.backends:91] [utils:execute] [DEBUG]- (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+2017-11-06 09:51:59,288 [Dummy-1:139668595439360] [django.db.backends:91] [utils:execute] [DEBUG]- (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+2017-11-06 10:06:00,079 [Dummy-1:139782188054272] [django.db.backends:91] [utils:execute] [DEBUG]- (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+2017-11-06 10:06:00,081 [Dummy-1:139782188054272] [django.db.backends:91] [utils:execute] [DEBUG]- (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+2017-11-06 10:06:16,489 [Thread-2:139782170031872] [django.server:124] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 15011
+2017-11-06 10:06:16,567 [Thread-3:139782161639168] [django.server:124] [basehttp:log_message] [INFO]- "GET /index/js/nav.js HTTP/1.1" 200 15011
